@@ -1,0 +1,15 @@
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <div flex ng-controller="NavCtrl">
+        <ul class="side-menu">
+            <li ng-repeat="section in menu.sections" class="parent-list-item" ng-class="{'parentActive' : isSectionSelected(section)}">
+                <h2 class="menu-heading" ng-if="section.type === 'heading'" id="heading_{{ section.name | nospace }}">
+                    {{section}}
+                </h2>
+                <menu-link section="section" ng-if="section.type === 'link'"></menu-link>
+
+                <menu-toggle section="section" ng-if="section.type === 'toggle'"></menu-toggle>
+                <md-divider></md-divider>
+            </li>
+        </ul>
+    </div>
+</md-sidenav>

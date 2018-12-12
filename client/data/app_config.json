@@ -1,0 +1,24 @@
+{
+  "APP" :{
+    "appName" : "CWC",
+    "appOwner" : {
+      "name": "primary",
+      "email" : "shairef@caer.com",
+      "phone": "998989223",
+      "logo": "http://api.qa1.nbos.io/Media/generic/MDI:08910e9a-c6fc-41a9-8ab7-55951a269ccd/carelogo_48x48.jpeg",
+      "banner": "http://api.qa1.nbos.io/Media/generic/MDI:13970c31-1e40-47bc-83e5-37102efe9302/Charge-Nurse-Image-300x200_300x200.jpg"
+
+    }
+  },
+
+  "MOD_IDN":{
+    "login_redirect" : "app.dashboard",
+    "validate_email" : false
+
+  },
+
+  "MOD_APP":{
+
+  }
+
+}

@@ -1,0 +1,94 @@
+<section ng-controller="AppDashboardCtrl" class="manage-app-users" layout="column">
+
+        <!-- Manage Project Navigation -->
+        <div layout="column" class="layoutPad featurebarTitle" >
+
+            <div layout="row" layout-align="start center">
+                <h1 class="md-title"> User Management</h1>
+                <div flex></div>
+                 <md-button ui-sref="app.adduser" class="md-primary md-raised" style="min-width:130px;">Add User</md-button>
+            </div>
+        </div>
+
+
+        <!-- Manage Users-->
+        <md-content class="users-content layoutPad">
+            <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">
+                <md-nav-item md-nav-click="updateTable('all')" name="all">All</md-nav-item>
+                <md-nav-item md-nav-click="updateTable('admin')" name="admin">Team Members</md-nav-item>
+                <md-nav-item md-nav-click="updateTable('user')" name="user">Employers</md-nav-item>
+                <md-nav-item md-nav-click="updateTable('partner')" name="partners">Partners</md-nav-item>
+                <span flex></span>
+                <!-- <md-input-container class="md-block searchFilter" flex-gt-sm>
+                    <label>Search</label>
+                    <md-icon class="material-icons">search</md-icon>
+                    <input ng-model="search.text">
+                </md-input-container> -->
+                <form name="searchForm" ng-submit="$event.preventDefault()">
+                    <div layout-gt-sm="row" class="searchFilter">
+                        <md-autocomplete md-floating-label="Search User" flex="" md-item-text="item.email" md-items="item in data" md-search-text-change="filterUsers(searchText)" md-search-text="searchText" md-selected-item="selectedItem" md-no-cache="noCache" md-input-maxlength="30" md-input-minlength="2" md-input-name="autocompleteField" required="">
+                            <md-item-template>
+                                <span md-highlight-text="ctrl.searchText">{{item.email}}</span>
+                            </md-item-template>
+                            <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                                <div ng-message="required">You <b>must</b> enter a username.</div>
+                                <div ng-message="minlength">Your entry is not long enough.</div>
+                                <div ng-message="maxlength">Your entry is too long.</div>
+                            </div>
+                        </md-autocomplete>
+                    </div>
+                </form>
+            </md-nav-bar>
+            <!-- DONT DELETE -->
+            <!-- <form name="searchForm" ng-submit="$event.preventDefault()">
+                <div layout-gt-sm="row">
+                    <md-autocomplete md-floating-label="Search User" flex="" md-item-text="item.email" md-items="item in data" md-search-text-change="querySearch(searchText)" md-search-text="searchText" md-selected-item="selectedItem" md-no-cache="noCache" md-input-maxlength="30" md-input-minlength="2" md-input-name="autocompleteField" required="">
+                        <md-item-template>
+                            <span md-highlight-text="ctrl.searchText">{{item.email}}</span>
+                        </md-item-template>
+                        <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                            <div ng-message="required">You <b>must</b> enter a username.</div>
+                            <div ng-message="minlength">Your entry is not long enough.</div>
+                            <div ng-message="maxlength">Your entry is too long.</div>
+                        </div>
+                    </md-autocomplete>
+                </div>
+            </form>
+            <md-list-item ng-repeat="person in users" class="noright">
+                <img alt="{{ person.firstName }}" ng-src="{{ person.img }}" class="md-avatar" />
+                <div class="md-list-item-text">
+                    <div>{{ person.firstName }} {{person.lastName}}</div>
+                    <div class="md-caption">{{person.email}}</div>
+                </div>
+                <div class="md-secondary">
+                    Admin
+                    <md-icon class="material-icons edit-icon" ng-click="editRole(person, $event)">edit</md-icon>
+                </div>
+                <md-icon class="md-secondary material-icons">block</md-icon>
+                <md-divider></md-divider>
+            </md-list-item>  -->
+            <md-table-container class="user-table">
+                <table md-table>
+                    <thead md-head>
+                    <tr md-row>
+                        <th md-column><span>User Image</span></th>
+                        <th md-column md-order-by="lastName"><span>Name</span></th>
+                        <th md-column>Email</th>
+                        <th md-column md-numeric>phone</th>
+                    </tr>
+                    </thead>
+                    <tbody md-body>
+                    <tr md-row ng-repeat="person in users | filter: search.text">
+                        <td md-cell><img alt="{{ person.firstName }}" ng-src="{{person.logoImage? person.logoImage.mediaFileDetailsList[0].mediapath:logo}}" class="user-avatar" /></td>
+                        <td md-cell class="table-userName" ng-click="editRole(person, $event)">{{ person.firstName }} {{person.lastName}}</td>
+                        <td md-cell>{{person.email}}</td>
+                        <td md-cell>{{person.phone}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-table-container>
+            <md-table-pagination md-limit="query.max" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{userCount}}" md-on-paginate="querySearch" md-page-select></md-table-pagination>
+        </md-content>
+        <div>
+        </div>
+    </section>

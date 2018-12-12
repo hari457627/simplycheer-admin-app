@@ -1,0 +1,10 @@
+version: '2'
+services:
+  simplycheer-admin-app:
+    build: .
+    image: simplycheer-admin-app:0.1
+    command: /simplycheer-admin-app/node_modules/grunt/bin/grunt express_dev
+    ports:
+      - "5001:5001"
+    stdin_open: true
+    tty: true

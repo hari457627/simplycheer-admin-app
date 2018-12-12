@@ -1,0 +1,16 @@
+<md-content layout="column" flex >
+    <section ui-view="header"></section>
+    <md-content layout="row" flex>
+        <nav ui-view="nav"></nav>
+        <md-content layout="column" flex class="nbos-bg">
+            <div flex layout="column">
+                <section flex="none">
+                    <div ui-view></div>
+                </section>
+                <div flex></div>
+                <div ui-view="footer"></div>
+            </div>
+        </md-content>
+    </md-content>
+
+</md-content>

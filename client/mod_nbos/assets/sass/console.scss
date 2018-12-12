@@ -1,0 +1,419 @@
+.nbos-progress {
+    position: relative;
+    .nbos-progress-value {
+        position: absolute;
+        left: 12px;
+        top: 20px;
+    }
+}
+
+.nbos-content-padding {
+    padding-left: 50px;
+}
+
+.nbos_manageProject_about {
+    md-tabs-wrapper {
+        display: none !important;
+    }
+}
+
+.nbos-nodecoration {
+    text-decoration: none;
+}
+
+.nbos_module_about {
+    .md-bottom-border {
+        md-tabs-wrapper {
+            //display: none !important;
+            border-style: none !important;
+            mg-pagination-wrapper {
+                align-content: center;
+            }
+        }
+    }
+    md-tabs-wrapper {
+        //display: none !important;
+        border-style: none !important;
+        mg-pagination-wrapper {
+            align-content: center;
+        }
+    }
+}
+
+.console_projects_back {
+    min-width: 0;
+    height: 50px;
+}
+
+.console_modulesList {
+    .md-avatar {
+        border-radius: 0 !important;
+    }
+}
+
+
+/* For Input Hints */
+
+.inputdemoErrorsAdvanced {
+    /* NOTE: Check the demo's HTML to see some additional RTL support CSS */
+    /* Setup animations similar to the ng-messages */
+}
+
+.inputdemoErrorsAdvanced .hint {
+    /* Position the hint */
+    position: absolute;
+    left: 2px;
+    right: auto;
+    bottom: 7px;
+    /* Copy styles from ng-messages */
+    font-size: 12px;
+    line-height: 14px;
+    transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+    /* Set our own color */
+    color: grey;
+}
+
+.inputdemoErrorsAdvanced .hint.ng-hide,
+.inputdemoErrorsAdvanced .hint.ng-enter,
+.inputdemoErrorsAdvanced .hint.ng-leave.ng-leave-active {
+    bottom: 26px;
+    opacity: 0;
+}
+
+.inputdemoErrorsAdvanced .hint.ng-leave,
+.inputdemoErrorsAdvanced .hint.ng-enter.ng-enter-active {
+    bottom: 7px;
+    opacity: 1;
+}
+
+
+/* For User Management */
+
+.manage-app-users {
+    .users-content {
+        padding-top: 12px;
+        .searchFilter {
+            position: relative;
+            bottom: 12px;
+        }
+        .user-table {
+            tbody {
+                .user-avatar {
+                    border-radius: 50%;
+                    box-sizing: content-box;
+                    flex: none;
+                    width: 40px;
+                    height: 40px;
+                }
+                .table-userName{
+                    text-decoration: underline;
+                }
+                .edit-icon {
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+* THEMES AND COLORS
+*/
+
+.preview-palette {
+    .color-group {
+        width: 360px;
+        padding-bottom: 30px;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            li.main-color {
+                border-bottom: 4px solid #fafafa;
+            }
+            li.color {
+                padding: 10px 15px 11px;
+                margin: 0;
+                .hex {
+                    float: right;
+                    text-transform: uppercase;
+                    display: block;
+                }
+                color: #fff;
+            }
+            li.dark {
+                color: #000 !important;
+            }
+        }
+    }
+}
+
+
+.market-moduleTileWrap {
+    min-height: 288px;
+}
+
+
+/* new styles */
+
+::selection {
+    background: #ccc;
+    color: #222c37;
+    text-shadow: none;
+}
+
+.layoutPad {
+    padding: 3% 6%;
+}
+
+.featurebarTitle {
+    h1.md-title {
+        font-size: 34px;
+        line-height: 34px;
+        font-weight: 200;
+        margin: 10px 0 2px;
+        text-transform: capitalize;
+        &.moreSpace {
+            margin: 0px 0 10px;
+        }
+    }
+    .md-button {
+        margin: 0;
+        padding: 0;
+        text-transform: capitalize;
+        font-size: 16px;
+        &:hover {
+            /*background: none !important;*/
+        }
+    }
+    .moduleSearch {
+        md-input-container {
+            margin: 20px 0 0;
+        }
+    }
+}
+
+.featureCard {
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 100%;
+    cursor: pointer;
+    &:hover {
+        .md-title {
+            text-decoration: underline;
+        }
+    }
+    .cardContent {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        overflow: visible;
+        .tags {
+            position: absolute;
+            right: 0;
+            top: 0;
+            .md-button {
+                min-height: 24px;
+                min-width: auto;
+                display: table;
+                line-height: 24px;
+                margin: -8px 6px 0 0;
+                font-size: 13px;
+                /*background: #eceff1;*/
+                text-transform: capitalize;
+                border-radius: 0;
+            }
+        }
+        .projectLogo {
+            position: absolute;
+            right: -4px;
+            top: -50px;
+            background:url(../images/shadow.png) center bottom no-repeat;
+            img {
+                width: 48px;
+                height: 48px;
+                border-radius: 4px;
+            }
+        }
+        .md-title {
+            text-transform: capitalize;
+            font-weight: 600;
+            word-wrap: break-word;
+            padding-top: 12px;
+        }
+        .md-body-2 {
+            padding: 0 8px;
+            opacity: 0.6;
+            font-weight: 400;
+            line-height: 18px;
+            -webkit-font-smoothing: auto;
+            height: 40px;
+            white-space: nowrap;
+            width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .cardLinks {
+            padding: 4px 0px 4px 8px !important;
+            margin: 0 !important;
+            .md-button {
+                margin: 0 !important;
+                min-width: 62px;
+                &:hover {
+                    background: none !important;
+                }
+            }
+
+        }
+    }
+}
+
+
+.projectLogo {
+    margin-right: 10px;
+    img {
+        width: 65px;
+        height: 65px;
+        border-radius: 10px;
+    }
+}
+
+.featureProgress {
+    padding-left: 62px;
+    margin-top: 20px;
+    h3 {
+        margin: 0;
+        padding: 8px 0 12px;
+    }
+    small {
+        opacity: 0.5;
+    }
+}
+
+.projectLinks {
+    section {
+        padding-bottom: 70px;
+        .sectionTitle {
+            text-transform: uppercase;
+            padding-right: 10px;
+            position: relative;
+            .md-button {
+                &.strip {
+                    box-shadow: none;
+                    border-radius: 0;
+                    min-height: 2px;
+                    position: absolute;
+                    left: 0;
+                    margin: 0;
+                    bottom: -6px;
+                    min-width: 58px;
+                }
+            }
+            span {
+                opacity: 0.5;
+            }
+        }
+        .md-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin: 3px 3px 3px 0px;
+        }
+        md-grid-list {
+            .md-button {
+                margin: 0 0 0 -10px;
+                padding: 0 10px;
+            }
+        }
+    }
+}
+
+.featureBar {
+    .freeTag {
+        .md-button {
+            min-height: 20px;
+            min-width: auto;
+            display: table;
+            line-height: 20px;
+            margin: 0px 0 0 8px;
+            font-size: 13px;
+            /* background: #eceff1; */
+            text-transform: capitalize;
+            border-radius: 0;
+            padding: 2px 6px;
+            box-shadow: none;
+        }
+    }
+}
+
+.market-moduleTileWrap {
+    min-height: 288px;
+}
+
+
+/**
+ * For the correct positioning of the placeholder element, the dnd-list and
+ * it's children must have position: relative
+ */
+
+.drag-modules ul[dnd-list],
+.drag-modules ul[dnd-list] > li {
+    position: relative;
+}
+
+
+/**
+ * The dnd-list should always have a min-height,
+ * otherwise you can't drop to it once it's empty
+ */
+
+.clearfix:after {
+    content: " ";
+    /* Older browser do not support empty content */
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.drag-modules ul[dnd-list] {
+    position: relative;
+    min-height: 42px;
+    padding-left: 0px;
+    li {
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        display: block;
+        padding: 10px 15px;
+        outline: none;
+        margin: 0 8px;
+        .drag-module-name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .handle {
+            float: left;
+        }
+        .drag-list-text{
+            float: left;
+        }
+    }
+    .drag-list {
+        cursor: move;
+    }
+    .dndDraggingSource {
+        display: none;
+    }
+    .dndPlaceholder {
+        display: block;
+        background-color: #ddd;
+        min-height: 42px;
+    }
+}
+
+.drag-modules ul[dnd-list] li.selected {
+    background-color: #dff0d8;
+    color: #3c763d;
+}

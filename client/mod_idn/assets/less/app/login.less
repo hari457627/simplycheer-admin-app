@@ -1,0 +1,63 @@
+.socialIcons {
+    margin-top: 20px;
+    .md-subhead {
+        margin-bottom: 10px;
+    }
+    .md-button {
+        background-color: rgba(0, 0, 0, 0.05);
+        min-width: 46px;
+        height: 52px;
+        margin: 0 20px 0 0;
+        md-icon {
+            width: 46px;
+            height: 46px;
+        }
+    }
+}
+
+.actionbtn {
+    margin-top: 20px;
+    margin-left: -10px;
+}
+
+.loginBanner {
+    width: 400px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    .overlapBg {
+        background: @nbosBlue;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        opacity: 0.4;
+    }
+    .bannerContent {
+        z-index: 20;
+        position: relative;
+        .loginTxt {
+            margin-top: 100%;
+            a {
+                font-size: 20px;
+                color: #fff;
+                text-transform: none;
+                font-weight: 600;
+            }
+            p {
+                padding-left: 14px;
+                color: #fff;
+                margin: 0;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+.formBlock {
+    min-width: 300px;
+}

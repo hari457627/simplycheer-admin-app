@@ -1,0 +1,26 @@
+{
+    "app" :{
+        "bower" : {
+            "bootstrap": "^3.3.6"
+        },
+        "bower_css" :[],
+        "bower_js":[],
+        "js" : [
+            "<script src='mod_app/mod.app.js'></script>",
+            "<script src='mod_app/views/dashboard/app.dashboardCtrl.js'></script>",
+            "<script src='mod_app/views/menu/app.headerCtrl.js'></script>"
+        ]
+    },
+    "admin" : {
+        "bower" : {
+            "moment": "^2.14.1"
+        },
+        "bower_css" :[],
+        "bower_js":[],
+        "js" : [
+            "<script src='mod_app/mod.app.js'></script>",
+            "<script src='mod_app/views/menu/app.headerCtrl.js'></script>",
+            "<script src='mod_app/views/admin/app.admin.js'></script>"
+        ]
+    }
+}

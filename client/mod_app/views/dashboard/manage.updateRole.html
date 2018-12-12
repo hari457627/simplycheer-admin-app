@@ -1,0 +1,22 @@
+<md-dialog aria-label="Role" ng-cloak flex="50">
+    <form name="roleForm">
+        <md-dialog-content class="md-dialog-content">
+            <h2 class="md-display-1">Update Role</h2>
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Role</label>
+                <md-select ng-model="userRole" ng-model-options="{trackBy: '$value.uRoleName'}">
+                    <md-option ng-repeat="role in roles" ng-value="{{role}}" name="role" ng-selected="{{ role.uRoleName == userRole.uRoleName ? 'true' : 'false' }}">{{role.description}}</md-option>
+                </md-select>
+                <div ng-messages="roleForm.role.$error" role="alert">
+                    <div ng-message-exp="['required']">
+                        Role cannot be empty
+                    </div>
+                </div>
+            </md-input-container>
+        </md-dialog-content>
+        <md-dialog-actions layout="row" layout-align="end end">
+            <md-button md-no-ink class="md-warn md-raised" ng-click="closeDialog()">Cancel</md-button>
+            <md-button md-no-ink class="md-primary md-raised" ng-click="create()" ng-disabled="roleForm.$invalid">Update</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

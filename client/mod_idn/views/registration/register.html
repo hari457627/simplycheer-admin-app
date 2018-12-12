@@ -1,0 +1,81 @@
+<div layout="column" ng-controller="RegisterCtrl">
+    <nav class="fixed-toolbar" ng-include="'mod_idn/views/header/loginHeader.html'"></nav>
+    <div layout="row" layout-padding class="login-content-padding" layout-align="center center">
+        <div layout="row">
+            <section md-whiteframe="10" layout="row">
+                <div class="loginBanner" hide-xs ng-style="{'background-image': 'url(' + banner+ ')'}" layout-padding>
+                    <div class="overlapBg"></div>
+                    <div class="bannerContent">
+                        <!-- <div class="logo"><img ng-src="{{logo}}"></div> -->
+                        <div class="logo"><img src="../assets/images/nbos-logo-wht.png"></div>
+                        <div class="loginTxt">
+                            <p>Already a user?</p>
+                            <md-button class="md-body-2" ui-sref="idn.login">Click here to Login now</md-button>
+                        </div>
+                    </div>
+                </div>
+                <md-content layout-padding>
+                    <div class="md-padding">
+                        <form name="userForm" ng-submit="registerUser(userForm);" class="md-padding formBlock">
+                            <div layout-gt-sm="row">
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>First name</label>
+                                    <input required name="firstName" ng-model="user.firstName" ng-pattern="/[a-zA-Z]/">
+                                    <div ng-messages="userForm.firstName.$error">
+                                        <div ng-message="['required', 'pattern']">
+                                            But what would we call you?
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                                <md-input-container class="md-block" flex-gt-sm>
+                                    <label>Last Name</label>
+                                    <input required name="lastName" ng-model="user.lastName">
+                                    <div ng-messages="userForm.lastName.$error">
+                                        <div ng-message="required">This is required.</div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div class="md-block" flex-gt-xs>
+                                <md-input-container class="md-block">
+                                    <label>Username/Email</label>
+                                    <input required name="email" ng-model="user.email" ng-pattern="/^.+@.+\..+$/">
+                                    <div ng-messages="userForm.email.$error" role="alert">
+                                        <div ng-message-exp="['required', 'pattern']">
+                                            Your username must look like an e-mail address.
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div class="md-block" flex-gt-xs>
+                                <md-input-container class="md-block">
+                                    <label>Password</label>
+                                    <input required type="password" name="userPassword" ng-model="user.password" minlength="8" />
+                                    <div ng-messages="userForm.userPassword.$error" role="alert">
+                                        <div ng-message-exp="['required', 'minlength']">
+                                            Your password was required to have a minimum length of 8.
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <section class="actionbtn">
+                                <md-button class="md-raised md-primary md-button md-ink-ripple" type="submit" ng-disabled="userForm.$invalid || disabledRegister">Register</md-button>
+                            </section>
+                            <md-divider></md-divider>
+                            <section layout-wrap layout-align="start center" class="socialIcons">
+                                 <div layout="row">
+                                    <md-button ng-click="socialLogin('fb')" ng-show="{{isFb}}">
+                                        <md-icon md-svg-src="assets/images/facebook.svg"></md-icon>
+                                    </md-button>
+                                    <md-button ng-click="socialLogin('google')" ng-show="{{isGoogle}}">
+                                        <md-icon md-svg-src="assets/images/googlePlus.svg"></md-icon>
+                                    </md-button>
+                                </div>
+                                <span flex></span>
+                            </section>
+                        </form>
+                    </div>
+                </md-content>
+            </section>
+        </div>
+    </div>
+</div>

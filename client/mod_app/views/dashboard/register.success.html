@@ -1,0 +1,18 @@
+<section ng-controller="RegisterSuccessCtrl" class="manage-app-users" layout="column">
+
+
+    <div layout="column" class="login-content-padding">
+
+        <div layout="column" layout-align="center center">
+            <h2 class="md-display-3">
+                Hurray! <span class="md-display-2">User added Successful!</span>
+            </h2>
+            <p class="md-headline" ng-show="showValidateEmail">
+                Please check verify your email before accessing the app.
+            </p>
+            <md-button ng-hide="showValidateEmail" class="md-raised md-accent" ui-sref="idn.dashboard">Show all Users</md-button>
+        </div>
+
+    </div>
+
+</div>

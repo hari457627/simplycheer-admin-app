@@ -1,0 +1,27 @@
+<div layout="column" ng-controller="LoginCtrl">
+    <nav class="fixed-toolbar" ng-include="'mod_idn/views/header/loginHeader.html'"></nav>
+    <div layout="row" layout-padding class="login-content-padding" layout-align="center center">
+        <div layout="row">
+            <section md-whiteframe="10" layout="row">
+                <md-content layout-padding>
+                    <div class="md-padding">
+                        <form name="projectForm" class="md-padding formBlock">
+                            <md-input-container class="md-block">
+                                <label>Email</label>
+                                <input required name="userName" ng-model="project.userName" ng-pattern="/^.+@.+\..+$/">
+                                <div ng-messages="projectForm.userName.$error" role="alert">
+                                    <div ng-message-exp="['required', 'pattern']">
+                                        This must like an e-mail address.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                            <section class="actionbtn">
+                                <md-button class="md-raised md-primary md-button md-ink-ripple">Reset Password</md-button>
+                            </section>
+                        </form>
+                    </div>
+                </md-content>
+            </section>
+        </div>
+    </div>
+</div>

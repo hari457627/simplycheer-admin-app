@@ -1,0 +1,62 @@
+<div layout="column" ng-controller="LoginCtrl">
+    <nav class="fixed-toolbar" ng-include="'mod_idn/views/header/loginHeader.html'"></nav>
+    <div layout="row" layout-padding class="login-content-padding" layout-align="center center">
+        <div layout="row">
+            <section md-whiteframe="10" layout="row">
+                <div class="loginBanner" hide-xs ng-style="{'background-image': 'url(' + banner+ ')'}" layout-padding>
+                    <div class="overlapBg"></div>
+                    <div class="bannerContent">
+                        <div class="logo"><img ng-src="{{logo}}"></div>
+                        <!-- <div class="logo"><img src="../assets/images/nbos-logo-wht.png"></div> -->
+                        <div class="loginTxt">
+                            <p>CWC platform</p>
+                        </div>
+                    </div>
+                </div>
+                <md-content layout-padding>
+                    <div class="md-padding">
+                        <form name="loginForm" ng-submit="validateuser(loginForm);" class="md-padding formBlock">
+                            <md-input-container class="md-block">
+                                <label>Username/Email</label>
+                                <input required name="userName" ng-model="user.username">
+                                <div ng-messages="loginForm.userName.$error" role="alert">
+                                    <div ng-message-exp="['required', 'pattern']">
+                                        Your username must look like an e-mail address.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container class="md-block">
+                                <label>Password</label>
+                                <input required type="password" name="userPassword" ng-model="user.password" minlength="8" />
+                                <div ng-messages="loginForm.userPassword.$error" role="alert">
+                                    <div ng-message-exp="['required', 'minlength']">
+                                        Your password was required to have a minimum length of 8.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container>
+                                <md-button class="md-raised md-primary" type="submit" ng-disabled="loginForm.$invalid || disableLogin" style="width: 70%; margin:0;">Sign In
+                                </md-button>
+                            </md-input-container>
+                            <md-divider></md-divider>
+                            <section layout-wrap layout-align="start center" class="socialIcons">
+                                <div layout="row">
+                                    <md-button ng-click="socialLogin('fb')" ng-show="{{isFb}}">
+                                        <md-icon md-svg-src="assets/images/facebook.svg"></md-icon>
+                                    </md-button>
+                                    <md-button ng-click="socialLogin('google')" ng-show="{{isGoogle}}">
+                                        <md-icon md-svg-src="assets/images/googlePlus.svg"></md-icon>
+                                    </md-button>
+                                </div>
+                                <span flex></span>
+                            </section>
+                            <section class="actionbtn">
+                                <md-button class="md-primary md-accent" ui-sref="idn.forgot">Forgot Password?</md-button>
+                            </section>
+                        </form>
+                    </div>
+                </md-content>
+            </section>
+        </div>
+    </div>
+</div>
